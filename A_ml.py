@@ -13,7 +13,7 @@ def load_group(filenames, prefix=''):
 	for name in filenames:
 		data = load_file(prefix + name)
 		loaded.append(data)
-	# grupo de pilhas para que os recursos sejam da 3ª dimensão
+	# grupo de pilhas para que os recursos estejam na 3ª dimensão
 	loaded = dstack(loaded)
 	return loaded
 
@@ -36,7 +36,7 @@ def load_dataset(group, prefix=''):
 
 # load all train
 trainX, trainy = load_dataset('train', 'HARDataset/')
-print(trainX.shape, trainy.shape)
+print(trainX.shape, trainy.shape) #Amostras, timesteps, recursos | Janela de dados, numero de observações por janela
 # load all test
 testX, testy = load_dataset('test', 'HARDataset/')
-print(testX.shape, testy.shape) #Amostras, timesteps, recursos | 
+print(testX.shape, testy.shape) #Amostras, timesteps, recursos | Janela de dados, numero de observações por janela
